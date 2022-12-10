@@ -8,5 +8,6 @@ app = Quart(__name__)
 async def inspect_push():
     push = await request.get_json()
     app.logger.debug(json.dumps(push, indent=2))
+    print(json.dumps(push, indent=2))
     return "", 204
 
