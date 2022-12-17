@@ -1,0 +1,7 @@
+game: hypercorn game --reload --debug --bind leaderboard.local.gd:$PORT --access-logfile - --error-logfile - --log-level DEBUG
+leaderboard: hypercorn leaderboard --reload --debug --bind leaderboard.local.gd:$PORT --access-logfile - --error-logfile - --log-level DEBUG
+
+
+redis: redis-server etc/redis.conf
+
+rq: rq worker
